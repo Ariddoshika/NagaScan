@@ -104,4 +104,4 @@ def db_conn():
 * Have fun!
 
 # Reference
-http://avfisher.win/archives/676
+[一个简单的分布式WEB扫描器的设计与实践](http://avfisher.win/archives/676)
