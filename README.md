@@ -8,9 +8,6 @@ NagaScan currently support some common Web application vulnerabilities, e.g. XSS
 ## How NagaScan work
 Config a proxy, e.g. Web Browser proxy or mobile Wi-Fi proxy, the traffic (including requests headers, cookies, post data, URLs, etc) will be mirrored and parsed into our central database, then NagaScan will be automatically assigned to distributed scanners to scan the common web application vulnerabilities.
 
-# Design
-![NagaScan](http://avfisher.win/wp-content/uploads/2017/03/20170313112539_66270.png)
-
 # Requirements
 ## Web Console
 * sudo pip install mysql-connector
