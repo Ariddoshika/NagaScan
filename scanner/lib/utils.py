@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import MySQLdb
-import smtplib
 import time
-from email.mime.text import MIMEText
 
 def highlight(content, color, ENVIRONMENT='Linux'):
     if ENVIRONMENT=='Linux':
@@ -20,28 +18,6 @@ def highlight(content, color, ENVIRONMENT='Linux'):
 def escape_content(content):
     content = MySQLdb.escape_string(content)
     return content
-
-def send_mail(to_list,sub,content):
-    mail_host="smtp.126.com"
-    mail_user="zz790786477"
-    mail_pass="Security123!"
-    mail_postfix="126.com"
-
-    me="Security Alert"+"<"+mail_user+'@'+mail_postfix+">"
-    msg = MIMEText(content,_subtype='plain',_charset='utf-8')  #gb2312
-    msg['Subject'] = sub
-    msg['From'] = me
-    msg['To'] = ";".join(to_list)
-    try:
-        server = smtplib.SMTP()
-        server.connect(mail_host)
-        server.login(mail_user,mail_pass)
-        server.sendmail(me, to_list, msg.as_string())
-        server.close()
-        return True
-    except Exception, e:
-        print str(e)
-        return False
 
 def logging(log_file, content):
     f=open(log_file,'a')
