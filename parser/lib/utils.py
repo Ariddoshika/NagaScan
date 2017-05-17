@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import MySQLdb
-import smtplib
 import time
-from email.mime.text import MIMEText
+
 
 def highlight(content, color, ENVIRONMENT='Linux'):
     if ENVIRONMENT=='Linux':
