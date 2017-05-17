@@ -3,6 +3,7 @@
 import MySQLdb
 import time
 
+
 def highlight(content, color, ENVIRONMENT='Linux'):
     if ENVIRONMENT=='Linux':
         if color == "red":
