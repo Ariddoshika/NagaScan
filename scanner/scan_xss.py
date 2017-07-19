@@ -172,7 +172,7 @@ def scanner(request):
 
 def main():
     exclude = get_scan_exclusion_info(fetch_exclusion_scan(0)[0])
-    limit_num = 10000 # Number of limit of requests
+    limit_num = 10 # Number of limit of requests
     scan_type = 'scan_xss'
     requests = fetch_request(exclude, scan_type, limit_num)
     if requests:
