@@ -153,9 +153,9 @@ def fetch_request(exclude, scan_type, limit_num):
             else:
                 conditions.append("lower({}) not like '%{}%'".format(key, vals[0]))
         conditions_str = " and ".join(conditions)
-        sql = "SELECT rid, protocol, host, method, user_agent, accept, accept_language, accept_encoding, cookie, referer, post_data, path, scan_xss, scan_sqli, content_type FROM requests WHERE {} = 0 and {} order by id desc limit {}".format(scan_type, conditions_str, limit_num)
+        sql = "SELECT rid, protocol, host, method, user_agent, accept, accept_language, accept_encoding, cookie, referer, post_data, path, scan_xss, scan_sqli, content_type FROM requests WHERE {} = 0 and {} order by RAND() limit {}".format(scan_type, conditions_str, limit_num)
     else:
-        sql = "SELECT rid, protocol, host, method, user_agent, accept, accept_language, accept_encoding, cookie, referer, post_data, path, scan_xss, scan_sqli, content_type FROM requests WHERE {} = 0 order by id desc limit {}".format(scan_type, limit_num)
+        sql = "SELECT rid, protocol, host, method, user_agent, accept, accept_language, accept_encoding, cookie, referer, post_data, path, scan_xss, scan_sqli, content_type FROM requests WHERE {} = 0 order by RAND() limit {}".format(scan_type, limit_num)
     requests = db_query(sql)
     return requests
 
