@@ -38,7 +38,7 @@ def insert_request(request):
     try:
         feeds = []
         for key, value in request.items():
-            if key != 'time':
+            if key != 'time' and key != 'cookie':
                 feeds.append(escape_content(value))
         feeds_str = ",".join(feeds)
         rid = hashlib.sha256(feeds_str).hexdigest()
